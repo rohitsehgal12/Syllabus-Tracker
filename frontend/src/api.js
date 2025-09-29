@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create a pre-configured instance of axios
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api', // Base URL for all requests
+  baseURL: 'https://syllabus-tracker-backend-7w7a.onrender.com/api', // Base URL for all requests
 });
 
 // This is an interceptor that runs before each request is sent
