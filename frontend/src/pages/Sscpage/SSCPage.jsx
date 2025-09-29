@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect, useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import axios from 'axios';
-import ProgressBar from '../../components/ProgressBar/ProgressBar';
+import ProgressBar from '../../components/Progressbar/ProgressBar';
 import './SSCPage.css';
 
 // --- Syllabus Data...
