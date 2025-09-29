@@ -1,0 +1,89 @@
+/* --- SIMPLE & FOCUSED LAYOUT --- */
+.planner-container { padding: 100px 20px 40px; min-height: 100vh; background-color: #f0f2f5; font-family: 'Poppins', sans-serif; }
+
+.manage-routine-btn {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  padding: 1rem;
+  background: #4338ca;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.manage-routine-btn:hover {
+  background: #312e81;
+}
+
+.routine-manager-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(240, 242, 245, 0.98);
+  backdrop-filter: blur(5px);
+  z-index: 2000;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  padding: 2rem;
+  overflow-y: auto;
+}
+.routine-manager-wrapper.active {
+  transform: translateX(0);
+}
+.close-routine-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #1a202c;
+  cursor: pointer;
+}
+
+.daily-tracker-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Styled Wrappers --- */
+.calendar-wrapper, .tasks-wrapper { background: #ffffff; padding: 1.5rem 2rem; border-radius: 16px; border: 2px solid #e2e8f0; }
+.routine-manager-wrapper h2, .tasks-wrapper h2 { margin-top: 0; color: #1a202c; font-size: 1.5rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.75rem; margin-bottom: 1rem; }
+
+/* --- Routine Management (inside the panel) --- */
+.add-routine-form { display: flex; margin-bottom: 1.5rem; }
+.add-routine-form input { flex-grow: 1; border: 2px solid #e2e8f0; border-radius: 8px; padding: 12px; font-size: 1rem; }
+.add-routine-form button { border: none; background: #4338ca; color: white; font-weight: bold; border-radius: 8px; padding: 0 1.25rem; margin-left: 10px; cursor: pointer; }
+.routine-list { list-style: none; padding: 0; max-height: 70vh; overflow-y: auto; }
+.routine-list li { display: flex; justify-content: space-between; align-items: center; border: 2px solid #e2e8f0; padding: 10px 15px; border-radius: 8px; margin-bottom: 8px; font-weight: 500; }
+.delete-btn { background: none; border: none; color: #90a4ae; cursor: pointer; font-size: 1.2rem; }
+
+/* --- Calendar & Task List --- */
+.react-calendar { width: 100%; border: none; }
+.react-calendar__tile { border-radius: 8px; }
+.react-calendar__tile--now:not(.react-calendar__tile--active) { background: #e0e7ff !important; border: 2px solid #4f46e5 !important; }
+.react-calendar__tile--active { background: #4338ca !important; color: white !important; }
+.day-all-complete { background: #dcfce7 !important; color: #166534 !important; }
+.day-missed { border: 2px solid #fecaca; background: none !important; }
+.daily-task-list { list-style: none; padding: 0; }
+.daily-task-list li label { display: flex; align-items: center; padding: 12px; border-bottom: 1px solid #eee; cursor: pointer; font-weight: 500; }
+.daily-task-list li label.completed { text-decoration: line-through; color: #94a3b8; }
+.daily-task-list input[type="checkbox"] { margin-right: 12px; width: 18px; height: 18px; accent-color: #4338ca; }
+.past-day-summary, .no-tasks { text-align: center; color: #5a6e7f; font-style: italic; padding: 2rem 0; }
+
+/* --- RESPONSIVE STYLES --- */
+@media (max-width: 768px) {
+  .daily-tracker-wrapper {
+    grid-template-columns: 1fr;
+  }
+}

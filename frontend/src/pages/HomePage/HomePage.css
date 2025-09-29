@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+.home-container {
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1d2b64, #373b44, #4286f4);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 65vh;
+  padding: 6.25rem 2rem 2rem; /* 100px 32px 32px */
+}
+
+.hero-title {
+  font-size: 3.5rem; /* 56px */
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem; /* 19.2px */
+  max-width: 37.5rem; /* 600px */
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.hero-cta {
+  padding: 0.875rem 1.875rem; /* 14px 30px */
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1d2b64;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 3.125rem; /* 50px */
+  cursor: pointer;
+}
+
+/* Exam Choice Section */
+.exam-choice-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.exam-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.25rem; /* 20px */
+  padding: 2rem;
+  width: 17.5rem; /* 280px */
+  cursor: pointer;
+}
+
+.exam-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.exam-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.exam-description {
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+/* --- IMPROVED RESPONSIVE STYLES --- */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 7.5rem 1.5rem 3rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem; /* This will now be 2.5 * 14px on mobile */
+  }
+
+  .exam-card {
+    width: 100%;
+    max-width: 22rem;
+  }
+}

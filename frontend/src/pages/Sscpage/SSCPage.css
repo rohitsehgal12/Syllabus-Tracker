@@ -1,0 +1,187 @@
+/* === Main Page Container - SSC Teal Theme === */
+.ssc-container {
+  /* This padding pushes the content down from under the navbar */
+  padding: 100px 20px 20px 20px; 
+  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #E0F2F1, #B2DFDB, #80CBC4);
+  background-attachment: fixed;
+  animation: gradientMove 15s ease infinite;
+  background-size: 400% 400%;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.ssc-container h1 {
+  color: #004D40; /* Dark Teal */
+}
+
+/* === Accordion Styles - Teal Theme === */
+.subjects-list {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subject-accordion, .category-accordion {
+  margin-bottom: 1rem;
+}
+
+.accordion-header, .category-header {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(0, 77, 64, 0.3); /* Teal border */
+  border-radius: 15px;
+  padding: 1rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #004D40; /* Dark Teal */
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.category-header {
+  font-size: 1.3rem;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+.accordion-header:hover, .category-header:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.accordion-header.active {
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.accordion-icon, .category-icon {
+  font-size: 1.8rem;
+}
+
+.accordion-content {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 77, 64, 0.3);
+  border-top: none;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  animation: fadeIn 0.5s ease;
+}
+
+.category-content {
+  padding: 0 0 0 1rem;
+  background: none;
+  border: none;
+  border-left: 2px solid rgba(0, 77, 64, 0.3);
+}
+
+.subcategory-title {
+  font-size: 1.3rem;
+  color: #004D40;
+  text-align: left;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* === Checklist Styles - Teal Theme === */
+.topic-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.topic-list li { margin-bottom: 10px; }
+
+.topic-item-list {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.topic-item-list:hover { background-color: rgba(255, 255, 255, 1); }
+.topic-item-list input[type="checkbox"] { display: none; }
+
+.custom-checkbox {
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  border: 2px solid #4DB6AC; /* Teal accent */
+  border-radius: 5px;
+  margin-right: 15px;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.custom-checkbox::after {
+  content: '✔';
+  font-size: 16px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease;
+}
+
+.topic-text {
+  font-weight: 600;
+  color: #37474f;
+  transition: color 0.3s ease;
+}
+
+.topic-item-list.completed { background-color: #d7f7f4; }
+.topic-item-list.completed .custom-checkbox {
+  background-color: #26A69A; /* Darker Teal */
+  border-color: #26A69A;
+}
+.topic-item-list.completed .custom-checkbox::after { transform: translate(-50%, -50%) scale(1); }
+.topic-item-list.completed .topic-text {
+  text-decoration: line-through;
+  color: #757575;
+}
+
+.placeholder-text {
+  color: #004D40;
+  font-style: italic;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* === Responsive Styles === */
+/* Replace your old @media block in both files */
+@media (max-width: 768px) {
+  .jee-container, .ssc-container {
+    padding-top: 80px; /* Adjust for a smaller static navbar on mobile */
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .accordion-header, .category-header {
+    font-size: 1.1rem;
+    padding: 0.8rem 1rem;
+  }
+  .topic-item-list {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+  .subjects-list, .accordion-content {
+    padding: 0;
+  }
+}
