@@ -32,7 +32,7 @@ const JEEPage = () => {
       if (token) {
         try {
           const config = { headers: { 'x-auth-token': token } };
-          const res = await axios.get('http://localhost:5000/api/progress', config);
+          const res = await axios.get('https://syllabus-tracker-backend-7w7a.onrender.com/api/progress', config);
           // Set state from the 'jee' key in the response
           if (res.data && res.data.jee) {
             setCompletedTopics(res.data.jee);
@@ -51,7 +51,7 @@ const JEEPage = () => {
       try {
         const config = { headers: { 'x-auth-token': token } };
         // Send the progress nested under a 'jee' key
-        await axios.put('http://localhost:5000/api/progress', { jee: newJeeProgress }, config);
+        await axios.put('https://syllabus-tracker-backend-7w7a.onrender.com/api/progress', { jee: newJeeProgress }, config);
         console.log('JEE Progress saved!');
       } catch (err) {
         console.error('Could not save JEE progress', err);
