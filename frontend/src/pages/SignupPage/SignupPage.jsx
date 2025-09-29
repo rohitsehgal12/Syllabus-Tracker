@@ -15,7 +15,7 @@ const SignupPage = () => {
     const newUser = { name, email, password };
 
     try {
-      const response = await axios.post('http://localhost:5000/api/users/register', newUser);
+      const response = await axios.post('https://syllabus-tracker-backend-7w7a.onrender.com/api/users/register', newUser);
       console.log('Registration successful! Token:', response.data.token);
       // alert('Account created successfully! Please log in.');
       toast.success('Account created successfully! Please log in.');
