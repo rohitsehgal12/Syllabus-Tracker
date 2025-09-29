@@ -22,7 +22,7 @@ const SSCPage = () => {
       if (token) {
         try {
           const config = { headers: { 'x-auth-token': token } };
-          const res = await axios.get('http://localhost:5000/api/progress', config);
+          const res = await axios.get('https://syllabus-tracker-backend-7w7a.onrender.com/api/progress', config);
           // Set state from the 'ssc' key in the response
           if (res.data && res.data.ssc) {
             setCompletedTopics(res.data.ssc);
@@ -40,7 +40,7 @@ const SSCPage = () => {
       try {
         const config = { headers: { 'x-auth-token': token } };
         // Send the progress nested under an 'ssc' key
-        await axios.put('http://localhost:5000/api/progress', { ssc: newSscProgress }, config);
+        await axios.put('https://syllabus-tracker-backend-7w7a.onrender.com/api/progress', { ssc: newSscProgress }, config);
         console.log('SSC Progress saved!');
       } catch (err) {
         console.error('Could not save progress', err);
