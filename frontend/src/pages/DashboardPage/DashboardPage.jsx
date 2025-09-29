@@ -64,7 +64,7 @@ const DashboardPage = () => {
       if (token) {
         try {
           const config = { headers: { 'x-auth-token': token } };
-          const res = await axios.get('http://localhost:5000/api/progress', config);
+          const res = await axios.get('https://syllabus-tracker-backend-7w7a.onrender.com/api/progress', config);
           setProgress(res.data || { jee: {}, ssc: {} });
         } catch (err) { console.error('Could not fetch progress', err); }
       }
